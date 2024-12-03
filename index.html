@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="practica de operaciones del CRUD para una agenda de contactos"
+    />
+    <meta
+      name="keywords"
+      content="create, update, read, delete, module, localstorage"
+    />
+    <meta name="Author" content="Dana Albornoz" />
+    <title>CRUD Peliculas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-danger">
+        <div class="container">
+          <a class="navbar-brand" href="#">PELICULAS</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/nosotros.html">Nosotros</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-secondary" type="submit">
+            Buscar
+          </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container my-5">
+      <div class="d-flex justify-content-between my-4">
+        <h1>Lista de Pelicula</h1>
+        <button class="btn btn-success">
+          <i class="bi bi-plus-circle"></i> Agregar 
+        </button>
+      </div>
+      <section class="table-responsive mt-5">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Director</th>
+              <th scope="col">Año</th>
+              <th scope="col">Género</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="bg-dark text-light text-center py-4">
+      <p>&copy; Todos los derechos reservados</p>
+    </footer>
+
+     <!-- modal  -->
+     <div
+     class="modal fade"
+     id="contactModal"
+     tabindex="-1"
+     aria-labelledby="contactModalLabel"
+     aria-hidden="true"
+   >
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="contactModalLabel">Agregar Pelicula</h5>
+           <button
+             type="button"
+             class="btn-close"
+             data-bs-dismiss="modal"
+             aria-label="Close"
+           ></button>
+         </div>
+         <div class="modal-body">
+           <form id="contactForm">
+             <div class="mb-3">
+               <label for="titulo" class="form-label">Titulo</label>
+               <input
+                 type="text"
+                 class="form-control is-invalid"
+                 id="titulo"
+                 name="titulo"
+               />
+               <div class="invalid-feedback">
+                 El titulo debe tener entre 2 y 50 caracteres
+               </div>
+             </div>
+             <div class="mb-3">
+               <label for="director" class="form-label">Director</label>
+               <input
+                 type="text"
+                 class="form-control is-invalid"
+                 id="director"
+                 name="director"
+                 required
+                 minlength="2"
+                 maxlength="50"
+               />
+               <div class="invalid-feedback">
+                 Debe tener entre 2 y 50 caracteres
+               </div>
+             </div>
+             <div class="mb-3">
+               <label for="genero" class="form-label">Género</label>
+               <input
+                 type="text"
+                 class="form-control is-invalid"
+                 id="genero"
+                 name="genero"
+                 minlength="2"
+                 maxlength="30"
+               />
+             </div>
+             <div class="mb-3">
+               <label for="anio" class="form-label">Anio</label>
+               <input
+                 type="anio"
+                 class="form-control"
+                 id="anio"
+                 name="anio"
+                 required
+               />
+             </div>
+             <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button type="submit" class="btn btn-primary" form="contactForm">
+                Guardar Pelicula
+              </button>
+            </div>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/app.js" type="module"></script>
+</html>
